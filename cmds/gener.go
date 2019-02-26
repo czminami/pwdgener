@@ -92,7 +92,7 @@ var GenerCmd = &cobra.Command{
 }
 
 func generatePwd(security, unit int, withSpec bool) []byte {
-	chaotic := []byte(strings.Join(shuffle(shuffle(append(shuffle(Source, 100), shuffle(Source, 100)...), 100), 100), ""))
+	chaotic := []byte(strings.Join(Shuffle(Shuffle(append(Shuffle(Source, 100), Shuffle(Source, 100)...), 100), 100), ""))
 
 	var pwd []byte
 	var rest []byte
@@ -133,7 +133,7 @@ func generatePwd(security, unit int, withSpec bool) []byte {
 	return pwd
 }
 
-func shuffle(source []string, thousands int) []string {
+func Shuffle(source []string, thousands int) []string {
 	random := bytes.NewBuffer(nil)
 
 	buf := make([]byte, 16)
